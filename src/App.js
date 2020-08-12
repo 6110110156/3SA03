@@ -2,10 +2,13 @@ import React from 'react';
 
 import './App.css';
 
+import Wordcard from './WordCard';
+
+const word ="Hello";
 function App() {
   return (
     <div>
-     hello world
+     <Wordcard value={word}/>
     </div>
   );
 }
