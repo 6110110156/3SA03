@@ -6,10 +6,16 @@ import Wordcard from './WordCard';
 
 
 
-const number ="1234567890"; //เปลี่ยนเป็นตัวเลข
+
 function App() {
-
-
+  var number =""; //สุ่มตัวเลข2ชุด
+  var  ran=Math.floor(Math.random()*2);
+  if(ran==0){
+    number="12345";
+  }
+  else if(ran==1){
+    number="67890";
+  }
  
   return (
     //เพิ่มclassName Appst
@@ -17,7 +23,7 @@ function App() {
     <body>
     <div className='Appst'> 
       <h1>GAME EVEN NUMBER</h1>
-      <h2>please select an even number(5 number)</h2>
+      <h2>please select an even number(2 number)</h2>
       <Wordcard value={number}/>
    
     </div>

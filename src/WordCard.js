@@ -9,8 +9,7 @@ const prepareStateFromWord = (given_word) => {
         number,
         chars,
         attempt: 1,
-        guess: '',
-        score: 0,
+        guess: '',  
         completed: false
     }       
 }
@@ -25,13 +24,12 @@ export default function Wordcard(prons){
         let guess = state.guess+c;
         setState({...state,guess})
 
-        //เลือกเฉพาะเลขคู่เท่านั้น 5ตัว
-       if(guess.length == 5){
-            if(guess/2==0){
+        //เลือกเฉพาะเลขคู่เท่านั้น 2ตัว
+       if(guess.length == 2){
+            if(guess%2==0){
                 //แสดงข้อความYou win
                 alert("You Win!!");
-                state.score+=10;
-                setState({...state, guess: '', completed: true,score:state.score});
+                setState({...state, guess: '', completed: true});
             }else{
                 //แสดงข้อความ  You lose
                 alert("You lose!!");
@@ -46,7 +44,7 @@ export default function Wordcard(prons){
     <div>
         
         <div>
-            Your Score:{state.score}
+            Your Ans:{state.guess}
         </div>
        {
           state.chars.map((c,i)=>
