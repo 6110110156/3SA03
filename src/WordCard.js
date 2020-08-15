@@ -44,8 +44,9 @@ export default function Wordcard(prons){
    
     return(
     <div>
+        
         <div>
-            Your Score:{state.score};
+            Your Score:{state.score}
         </div>
        {
           state.chars.map((c,i)=>
