@@ -4,9 +4,6 @@ import './App.css';
 
 import Wordcard from './WordCard';
 
-
-
-
 function App() {
   var number =""; //สุ่มตัวเลข2ชุด
   var  ran=Math.floor(Math.random()*2);
