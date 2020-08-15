@@ -24,13 +24,15 @@ export default function Wordcard(prons){
         let guess = state.guess+c;
         setState({...state,guess})
 
-        //หาเฉพาะเลขคู่เท่านั้น
+        //เลือกเฉพาะเลขคู่เท่านั้น 5ตัว
        if(guess.length == 5){
-            if(guess%2==0){
-            console.log('yeah!')
-            setState({...state, guess: '', completed: true})
+            if(guess/2==0){
+                //แสดงข้อความYou win
+                alert("You Win!!");
+                setState({...state, guess: '', completed: true})
             }else{
-                console.log('reset, next attemp')
+                //แสดงข้อความ  You lose
+                alert("You lose!!");
                 setState({...state, guess: '', attempt: state.attempt + 1})
                 }
             }  
