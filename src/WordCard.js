@@ -24,8 +24,9 @@ export default function Wordcard(prons){
         let guess = state.guess+c;
         setState({...state,guess})
 
-        if(guess.length == state.number.length){
-            if(guess == state.number){
+        //หาเฉพาะเลขคู่เท่านั้น
+       if(guess.length == 5){
+            if(guess%2==0){
             console.log('yeah!')
             setState({...state, guess: '', completed: true})
             }else{
