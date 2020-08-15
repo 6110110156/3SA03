@@ -30,6 +30,7 @@ export default function Wordcard(prons){
                 //แสดงข้อความYou win
                 alert("You Win!!");
                 setState({...state, guess: '', completed: true});
+                window.location.reload(false);
             }else{
                 //แสดงข้อความ  You lose
                 alert("You lose!!");
