@@ -6,10 +6,11 @@ const prepareStateFromWord = (given_word) => {
     let number = given_word.toUpperCase()
     let chars = _.shuffle(Array.from(number))
     return {
-       number,
+        number,
         chars,
         attempt: 1,
         guess: '',
+        score: 0,
         completed: false
     }       
 }
@@ -29,7 +30,8 @@ export default function Wordcard(prons){
             if(guess/2==0){
                 //แสดงข้อความYou win
                 alert("You Win!!");
-                setState({...state, guess: '', completed: true})
+                state.score+=10;
+                setState({...state, guess: '', completed: true,score:state.score});
             }else{
                 //แสดงข้อความ  You lose
                 alert("You lose!!");
@@ -42,6 +44,9 @@ export default function Wordcard(prons){
    
     return(
     <div>
+        <div>
+            Your Score:{state.score};
+        </div>
        {
           state.chars.map((c,i)=>
          <CharacterCard value={c} key={i} activationHandler={activationHandler} attempt={state.attempt}/>
