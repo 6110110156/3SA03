@@ -3,10 +3,10 @@ import _  from 'lodash';
 import CharacterCard from './CharacterCard';
 
 const prepareStateFromWord = (given_word) => {
-    let word = given_word.toUpperCase()
-    let chars = _.shuffle(Array.from(word))
+    let number = given_word.toUpperCase()
+    let chars = _.shuffle(Array.from(number))
     return {
-        word,
+       number,
         chars,
         attempt: 1,
         guess: '',
@@ -24,8 +24,8 @@ export default function Wordcard(prons){
         let guess = state.guess+c;
         setState({...state,guess})
 
-        if(guess.length == state.word.length){
-            if(guess == state.word){
+        if(guess.length == state.number.length){
+            if(guess == state.number){
             console.log('yeah!')
             setState({...state, guess: '', completed: true})
             }else{
