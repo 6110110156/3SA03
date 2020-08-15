@@ -12,5 +12,7 @@
   background: pink;
 } 
 .Appst{ 
-  background: burlywood;
+display:inline-block;
+text-align: center ;
+  background:  aqua;
 }
